@@ -128,8 +128,19 @@ st.markdown("""
   .stButton > button:hover { opacity:0.88 !important; transform:translateY(-1px) !important; }
 
   /* Sidebar */
-  section[data-testid="stSidebar"] { background: #f0f2f9; }
-  .sidebar-logo { font-size: 1.6rem; font-weight: 700; color: #667eea; text-align:center; margin-bottom: 1rem; }
+  section[data-testid="stSidebar"] { background: #1e1e2e !important; }
+  section[data-testid="stSidebar"] .stMarkdown p,
+  section[data-testid="stSidebar"] .stMarkdown li,
+  section[data-testid="stSidebar"] .stMarkdown span { color: #c5cae9 !important; }
+  section[data-testid="stSidebar"] .stMarkdown h1,
+  section[data-testid="stSidebar"] .stMarkdown h2,
+  section[data-testid="stSidebar"] .stMarkdown h3,
+  section[data-testid="stSidebar"] .stMarkdown strong,
+  section[data-testid="stSidebar"] .stMarkdown b { color: #ffffff !important; }
+  section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p { color: #c5cae9 !important; }
+  section[data-testid="stSidebar"] hr { border-color: #3a3a5c !important; }
+  section[data-testid="stSidebar"] .stButton > button { background: linear-gradient(135deg,#667eea,#764ba2) !important; }
+  .sidebar-logo { font-size: 1.6rem; font-weight: 700; color: #a78bfa; text-align:center; margin-bottom: 1rem; }
 
   /* Shimmer loading bar */
   .loading-shimmer {
@@ -388,38 +399,9 @@ if st.session_state.history:
 
 
 # ── Footer ────────────────────────────────────────────────────────────────────────
-
+st.markdown("<hr class='divider'>", unsafe_allow_html=True)
 st.markdown(
-    """
-    <style>
-    .footer-divider {
-        border: 0;
-        height: 1px;
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(170, 170, 170, 0.75), rgba(0, 0, 0, 0));
-        margin-top: 30px;
-        margin-bottom: 15px;
-    }
-    .footer-text {
-        text-align: center;
-        color: #888888;
-        font-size: 0.85rem;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        letter-spacing: 0.5px;
-    }
-    .footer-brand {
-        color: #ff4b4b; 
-        font-weight: 600;
-    }
-    </style>
-    
-    <hr class="footer-divider">
-    <div class="footer-text">
-        🧠 <span class="footer-brand">SentimentIQ</span> · Built with Streamlit · Logistic Regression + TF-IDF
-        <br>
-        <p style="margin-top: 5px; font-size: 0.8rem; color: #aaa;">
-            © 2026 | Developed with ❤️ by <b>M.A.T</b>
-        </p>
-    </div>
-    """,
+    '<p style="text-align:center;color:#aaa;font-size:0.8rem;">'
+    '🧠 SentimentIQ · Built with Streamlit · Logistic Regression + TF-IDF</p>',
     unsafe_allow_html=True
 )
